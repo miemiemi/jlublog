@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -22,8 +22,7 @@
 				<c:if test="${user!=null && user.isApplied==1}">
 
 					<ul class="nav navbar-nav">
-						<li><a
-							href="<%=basePath%>myBlogController?userId=${user.id}">我的博客</a></li>
+						<li><a href="<%=basePath%>myBlogController?userId=${user.id}">我的博客</a></li>
 					</ul>
 
 					<ul class="nav navbar-nav">
@@ -50,7 +49,6 @@
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="<%=basePath%>entryLogin" target="_blank">登录</a></li>
-							<li><a href="<%=basePath%>entryRegister" target="_blank">注册</a></li>
 						</ul>
 					</c:when>
 					<c:when test="${user!=null }">

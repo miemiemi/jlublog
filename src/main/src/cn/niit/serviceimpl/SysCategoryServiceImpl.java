@@ -16,7 +16,6 @@ import cn.niit.mapper.LoginMapper;
 import cn.niit.mapper.ManageMapper;
 import cn.niit.mapper.MyBlogMapper;
 import cn.niit.mapper.ProFileMapper;
-import cn.niit.mapper.Register;
 import cn.niit.mapper.SysCategoryMapper;
 import cn.niit.mapper.UpdBlogInfo;
 import cn.niit.pojo.Article;
@@ -40,8 +39,7 @@ public class SysCategoryServiceImpl implements SysCategoryService {
 	private MyBlogMapper myBlogMapper;
 	@Autowired
 	private LoginMapper loginMapper;
-	@Autowired
-	private Register register;
+
 	@Autowired
 	private ManageMapper manageMapper;
 	@Autowired
@@ -140,21 +138,6 @@ public User getLogin(User user ) {
 //分割线=================注册
 
 
-@Override
-public User selRegister(User user) {
-	return register.selRegister(user);
-}
-
-@Override
-public int insRegister(User user) {
-	return 	register.insRegister(user);
-}
-
-@Override
-public User selByEmail(User user) {
-	return 	register.selByEmail(user);
-
-}
 
 
 //分割线=================注册

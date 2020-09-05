@@ -13,9 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <div class="row">
           <div class="col-lg-12">
             <p >
-            Copyright &copy; 2013 &middot; UI based on Bootstrap 3 
-                                  &middot; <a href="<%=basePath %>AdminLogin.jsp" target="_blank">admin</a>
-                                  &middot; starlee2008@163.com 
+            Copyright &copy; 2020 &middot; UI based on Bootstrap 3 a1206198069@163.com
                                   &middot;访问人数：<%=(Integer)session.getAttribute("num") %>                           
                             
             </p>

@@ -81,49 +81,7 @@ public class FileUploadController {
 
 	    }
 	    
-	    
-	    @RequestMapping(value="/register",method=RequestMethod.POST)
-	    public String reg(@ModelAttribute Boy boy,HttpServletRequest request,Map<String,Object> map){
 
-	        final String wrong="error";
-
-	        final String good="success";
-
-	        MultipartFile headimage = boy.getHeadimage();
-
-	        boolean empty = headimage.isEmpty();
-
-	        if (!empty) {
-
-	            String realPath = request.getServletContext().getRealPath("/images");
-
-	            String uploadPath="D:\\userUploadFile\\Files";
-
-	            String headimageName = headimage.getOriginalFilename();
-
-	            File imageFile = new File(uploadPath,headimageName);
-
-	            
-	            try {
-
-	                headimage.transferTo(new File(uploadPath+File.separator+headimageName));
-
-	            } catch (Exception e) {
-
-	                e.printStackTrace();
-
-	                return wrong;
-
-	            }
-	            map.put("boy", boy);
-
-	            return "userinfo";
-
-	        }else {
-	            return wrong;
-	        }
-	    }
-	    
 	    
 	    @RequestMapping(value="/download",method=RequestMethod.GET) //匹配的是href中的download请求
 	    public ResponseEntity<byte[]> download(HttpServletRequest request,@RequestParam("filename") String filename,

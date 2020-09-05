@@ -50,7 +50,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="<%=basePath%>entryLogin" target="_blank">登录</a></li>
-							<li><a href="<%=basePath%>entryRegister" target="_blank">注册</a></li>
 						</ul>
 					</c:when>
 					<c:when test="${user!=null }">

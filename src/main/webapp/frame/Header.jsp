@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>JSP Blog</title>
+    <title>BlogsByJluStudent</title>
 
 
    	<link href="<%=basePath %>bootstrap/css/bootstrap.css" rel="stylesheet">

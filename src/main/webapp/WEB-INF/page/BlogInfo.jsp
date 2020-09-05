@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">简单博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -50,7 +50,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="<%=basePath%>entryLogin" target="_blank">登录</a></li>
-							<li><a href="<%=basePath%>entryRegister" target="_blank">注册</a></li>
 						</ul>
 					</c:when>
 					<c:when test="${user!=null }">

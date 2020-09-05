@@ -147,39 +147,12 @@ public class SysCategoryController {
     	session.removeAttribute("user");
     	 return "forward:SysCategoryList";
      }
-//     注册入口
-     @RequestMapping("entryRegister")
-     public String entryRegister() {
-		return "Register";
-     }
 
 	@RequestMapping("applyBlog")
 	public String applyBlog() {
 		return "ApplyBlog";
 	}
-     //注册
-     @RequestMapping(value = "register", method = {RequestMethod.POST,RequestMethod.GET},params = { "username","password","email" })
-     public String Register(@RequestParam("username")String userName,@RequestParam("password")String password,@RequestParam("email")String email) {
-    	User user=new User();
-    	user.setUserName(userName);
-    	user.setPassword(password);
-    	user.setEmail(email);
-    	 User user2 = SysCategoryServiceImpl.selRegister(user);
-    	 User user3 = SysCategoryServiceImpl.selByEmail(user);
-    	 
-    	 if (user2==null&&user3==null) {
-    		 int insRegister = SysCategoryServiceImpl.insRegister(user);
-    		 if (insRegister>0) {
-				request.setAttribute("suc", "注册成功");
-			}else {
-				request.setAttribute("error", "注册失败，请重新输入");
-			}
-		}else {
-			request.setAttribute("exitError", "用户名或邮箱已经被使用");
-		}
-//    	 return "test";
-    	 return "Register";
-     }
+
 //     博文管理
      @RequestMapping(value="manage")
      public String manage(Model model,Integer userId) {

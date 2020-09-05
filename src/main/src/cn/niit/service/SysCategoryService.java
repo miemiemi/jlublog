@@ -29,11 +29,6 @@ public interface SysCategoryService {
 	
 //	µÇÂ¼
 	User getLogin(User user);
-	
-//	×¢²á
-	User selRegister(User user);
-	User selByEmail(User user);
-	int  insRegister(User user);
 
 //	ÎÄÕÂ¹ÜÀí
 	List<Article> selManage(Integer id);

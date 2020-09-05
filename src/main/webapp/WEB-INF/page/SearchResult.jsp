@@ -11,67 +11,78 @@ String q = (String)request.getAttribute("q");
 %>
 <jsp:include page="../../frame/Header.jsp"></jsp:include>
 
-  <body>
+<body>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
+    <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="index.html">JSP 博客</a>
+            <a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
         </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="<%=basePath%>index.html">网站首页</a></li>
-          </ul>
-          <c:if test="${user!=null }">
-          
-          
-          <ul class="nav navbar-nav">
-            <li><a href="<%=basePath%>user?action=myblog&userId=${user.id}">我的博客</a></li>
-          </ul>
-          
-          <ul class="nav navbar-nav">
-            <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">博客管理<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <li><a href="<%=basePath%>article?action=manage&userId=${user.id}"><i class="icon-cog"></i> 博文管理</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<%=basePath%>category?action=manage&userId=${user.id}"><i class="icon-cog"></i> 分类管理</a></li>
-                    <li class="divider"></li>
-                    <li><a href="<%=basePath%>comment.html?action=manage&userId=${user.id}"><i class="icon-cog"></i> 评论管理</a></li>
+            <ul class="nav navbar-nav">
+                <li><a href="<%=basePath%>SysCategoryList">网站首页</a></li>
+            </ul>
+            <c:if test="${user!=null && user.isApplied==1}">
+
+                <ul class="nav navbar-nav">
+                    <li><a href="<%=basePath%>myBlogController?userId=${user.id}">我的博客</a></li>
                 </ul>
-            </li>
-          </ul>
-         
-          </c:if>
-          <c:choose>
-          <c:when test="${user!=null }">
-         
-          <ul class="nav navbar-nav navbar-right">
-          	<li><a href="<%=basePath%>entryLogin" target="_blank">登录</a></li>
-          	<li><a href="<%=basePath%>entryRegister" target="_blank">注册</a></li>
-          </ul>
-          </c:when>
-          <c:otherwise>
-        
-          <div class="pull-right">
-                <ul class="nav pull-right">
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">欢迎，${user.userName} <b class="caret"></b></a>
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown"><a href="#" class="dropdown-toggle"
+                                            data-toggle="dropdown">博客管理<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="<%=basePath%>profile?id=${user.id}"><i class="icon-cog"></i> 编辑个人信息</a></li>
-                            <c:if test="${user.isApplied==1 }">                            
+                            <li><a
+                                    href="<%=basePath%>manage?userId=${user.id}"><i
+                                    class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
                             <li class="divider"></li>
-                            <li><a href="<%=basePath%>user?action=bloginfo&userId=${user.id}"><i class="icon-cog"></i> 编辑博客信息</a></li>
-                            
-                            </c:if>
+                            <li><a
+                                    href="<%=basePath%>categoryManage?userId=${user.id}"><i
+                                    class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
                             <li class="divider"></li>
-                            <li><a href="<%=basePath%>user?action=logout"><i class="icon-off"></i> 登出</a></li>
-                        </ul>
-                    </li>
+                            <li><a
+                                    href="<%=basePath%>artCmtMng?userId=${user.id}"><i
+                                    class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+                        </ul></li>
                 </ul>
-          </div>
-          </c:otherwise>
-          </c:choose>
+
+            </c:if>
+            <c:choose>
+                <c:when test="${user==null }">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="<%=basePath%>entryLogin" target="_blank">登录</a></li>
+                    </ul>
+                </c:when>
+                <c:when test="${user!=null }">
+
+                    <div class="pull-right">
+                        <ul class="nav pull-right">
+                            <li class="dropdown"><a href="#" class="dropdown-toggle"
+                                                    data-toggle="dropdown">欢迎，${user.userName} <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a
+                                            href="<%=basePath%>Profile?userId=${user.id}&email=${user.email}"><i
+                                            class="glyphicon glyphicon-cog"></i> 编辑个人信息</a></li>
+                                    <c:if test="${user.isApplied==1}">
+
+                                        <li class="divider"></li>
+                                        <li><a
+                                                href="<%=basePath%>selBlog?userId=${user.id}"><i
+                                                class="glyphicon glyphicon-cog"></i> 编辑博客信息</a></li>
+                                    </c:if>
+                                    <li class="divider"></li>
+                                    <li><a href="<%=basePath%>logout"><i
+                                            class="glyphicon glyphicon-off"></i> 登出</a></li>
+                                </ul></li>
+                        </ul>
+                    </div>
+
+                </c:when>
+            </c:choose>
         </div>
-      </div>
+    </div>
     </nav>
 
     <div class="container">
