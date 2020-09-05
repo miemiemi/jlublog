@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,12 +36,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 
@@ -134,33 +130,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             	
                             </select>
                         </div>
-                        <div class="form-group">   
-                        <label for="category">个人分类</label>
-                        	<select class="form-control"  id="subject" name="category">
-                          
-                            <c:choose>
-                            <c:when test="${null != cgList }">
-                            <c:forEach items="${cgList }" var="cg">
-                            
-                           <c:choose>
-                            <c:when test="${cg.isDelete==0 && art.categoryId==cg.id}">
-                           <option value="${ art.categoryId}" selected>${cg.categoryName }</option>
-                            </c:when>
-                            
-                            <c:otherwise>
-                            <option value="${cg.id }">${cg.categoryName }</option>
-                            </c:otherwise>
-                           </c:choose>
-                            
-                            </c:forEach>
-                            </c:when>
-                            
-                            <c:otherwise>
-                                                                                    获取个人分类失败
-                            </c:otherwise>
-                            </c:choose>
-                        	</select>
-	                </div>
 	                <div class="form-group">
 	                    <textarea class="form-control" id="message" name="summary" class="span6" placeholder="摘要" rows="5">${art.summary }</textarea>
 	                </div>

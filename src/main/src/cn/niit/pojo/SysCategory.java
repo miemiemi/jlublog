@@ -1,10 +1,12 @@
 package cn.niit.pojo;
 
 public class SysCategory {
+
 	private int id;
 	private String categoryName;
 	private int articles;
 	private int isDelete;
+
 	public int getId() {
 		return id;
 	}

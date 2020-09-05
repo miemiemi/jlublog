@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">简单博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,12 +35,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 

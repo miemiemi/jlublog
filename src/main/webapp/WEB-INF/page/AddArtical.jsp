@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -37,12 +37,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 
@@ -118,22 +114,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             </c:otherwise>
                             </c:choose>
                             </select>
-                         </div> 
-                         <div class="form-group">  
-                        <label for="category">个人分类</label>
-                        	<select class="form-control" id="subject" name="category">
-                        	<c:choose>
-                        	<c:when test="${selAC!=null && fn:length(selAC)>0 }">
-                        	<c:forEach items="${selAC }" var="cg">
-                        	<option value="${cg.id }">${cg.categoryName}</option>
-                        	</c:forEach>
-                        	</c:when>                          
-                            <c:otherwise>
-                            <c:out value="无分类"></c:out>
-                            </c:otherwise>
-                            </c:choose>
-                        	</select>
-                        </div>
+                         </div>
 	                
 	                <div class="form-group">
 	                    <textarea class="form-control" id="message" name="summary"  placeholder="摘要" rows="5">

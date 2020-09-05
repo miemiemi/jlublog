@@ -12,7 +12,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,12 +36,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 
@@ -155,33 +151,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         </div>
         
-        <div class="col-lg-4">                  
-          <form action="servlet/GetSysCategoryServlet" method="GET">
-          <div class="well">
-            <h4> 文章分类</h4>
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled">
-                  	
-                  	<c:choose>
-                  	<c:when test="${null != cgList}">
-                  	<c:forEach items="${cgList }" var="cg">
-                  	<c:if test="${cg.isDelete==0 }">
-                  	<li><a href="#">${cg.categoryName }</a></li>
-                  	</c:if>
-                  	</c:forEach>
-                  	</c:when>
-                  	
-                  	<c:otherwise>
-                  	                  	<li>无分类</li>
-                  	</c:otherwise>
-                  	</c:choose>
-                  </ul>
-                </div>
-              </div>
-          </div><!-- /well -->
-          </form> 
-          
+        <div class="col-lg-4">
           <div class="well">
             <h4>公告</h4>
             <p>${blogInfo.annoucement }</p>

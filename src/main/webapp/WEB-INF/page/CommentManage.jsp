@@ -11,7 +11,7 @@ session.setAttribute("basePath", basePath);
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -35,12 +35,8 @@ session.setAttribute("basePath", basePath);
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 
@@ -104,11 +100,9 @@ session.setAttribute("basePath", basePath);
 				<thead>
 					<tr>
 						<th>评论内容</th>
-						<th>评论人</th>
 						<th>评论的文章标题</th>
 
 						<th>评论时间</th>
-						<th style="width: 50px;">操作</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -118,12 +112,8 @@ session.setAttribute("basePath", basePath);
 							<c:forEach items="${art.coms }" var="com">
 							<tr>
 				       <td> ${com.content} </td>
-						<td>${com.user.userName}</td>
 						<td>${art.title}</td>
 						<td>${com.time}</td>
-						<td><a href="<%=basePath%>deleteComment?cmtId=${com.id}&userId=${user.id}" >
-						<i class="glyphicon glyphicon-remove"></i></a></td>
-						
 					</tr>
 							</c:forEach>
 										
@@ -148,12 +138,3 @@ session.setAttribute("basePath", basePath);
 	</div>			
 	<%-- </c:if> --%>
 <jsp:include page="../../frame/Footer.jsp"></jsp:include>
-
-<script type="text/javascript">
-function dele(deleUrl) {
-	
-	if (confirm("你确定要删除该评论吗？")) {
-		location.href = deleUrl;
-	}
-}
-</script>

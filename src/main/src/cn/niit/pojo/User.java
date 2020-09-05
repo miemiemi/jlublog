@@ -3,6 +3,7 @@ package cn.niit.pojo;
 import java.util.List;
 
 public class User {
+
 	private int id;
 	private String email;
 	private String userName;
@@ -26,12 +27,14 @@ public class User {
 	public void setArticles(List<Article> articles) {
 		this.articles = articles;
 	}
-		@Override
+
+	@Override
 	public String toString() {
 		return "User [id=" + id + ", email=" + email + ", userName=" + userName + ", isApplied=" + isApplied
 				+ ", isDelete=" + isDelete + ", isProfile=" + isProfile + ", articles=" + articles + "]";
 	}
-		public int getIsProfile() {
+
+	public int getIsProfile() {
 		return isProfile;
 	}
 	public void setIsProfile(int isProfile) {

@@ -12,7 +12,7 @@ session.setAttribute("basePath", basePath);
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">J2EE 博客</a>
+				<a class="navbar-brand" href="<%=basePath%>SysCategoryList">JLU 博客</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -36,12 +36,8 @@ session.setAttribute("basePath", basePath);
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 
@@ -122,7 +118,6 @@ session.setAttribute("basePath", basePath);
 					<tr>
 						<th>标题</th>
 						<th>系统分类</th>
-						<th>个人分类</th>
 						<th>最近一次修改时间</th>
 						<th style="width: 50px;">操作</th>
 					</tr>
@@ -134,7 +129,6 @@ session.setAttribute("basePath", basePath);
 					<tr>
 						<td><a
 							href="<%=basePath %>ArtCom?userId=${user.id }&artId=${art.id}">${art.title }</a></td>
-						<td>${art.category.categoryName }</td>
 						<td>${art.sCategory.categoryName }</td>
 						<td>${art.publishTime }</td>
 						<td><a href="<%=basePath %>createArt?artId=${art.id}&userId=${user.id }"><i
@@ -143,7 +137,6 @@ session.setAttribute("basePath", basePath);
 					    <td><a href="${basePath }removeArt?artId=${art.id }&userId=${user.id }"><i
 								class="glyphicon glyphicon-remove"></i></a>
 						</td>
-														
 					</tr>
 										
 					</c:forEach>

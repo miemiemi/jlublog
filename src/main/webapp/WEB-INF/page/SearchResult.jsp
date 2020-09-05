@@ -38,12 +38,8 @@ String q = (String)request.getAttribute("q");
                                     class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
                             <li class="divider"></li>
                             <li><a
-                                    href="<%=basePath%>categoryManage?userId=${user.id}"><i
-                                    class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-                            <li class="divider"></li>
-                            <li><a
                                     href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-                                    class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+                                    class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
                         </ul></li>
                 </ul>
 

@@ -34,12 +34,8 @@
 										class="glyphicon glyphicon-cog"></i> 博文管理</a></li>
 								<li class="divider"></li>
 								<li><a
-									href="<%=basePath%>categoryManage?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 分类管理</a></li>
-								<li class="divider"></li>
-								<li><a
 									href="<%=basePath%>artCmtMng?userId=${user.id}"><i
-										class="glyphicon glyphicon-cog"></i> 评论管理</a></li>
+										class="glyphicon glyphicon-cog"></i> 评论查看</a></li>
 							</ul></li>
 					</ul>
 
@@ -86,8 +82,8 @@
 		<div class="row">
 			<div id="blog" class="col-lg-8">
 				<h1>
-					<a href="#">轻博客——<small>基于JSP,
-							Servlet技术构建</small></a>
+					<p>JLU博客——<small>基于Spring,
+							SpringMVC,Mybatis技术构建</small></p>
 				</h1>
 				<br>
 				<c:choose>
@@ -175,19 +171,21 @@
 					<div class="row">
 						<div class="">
 							<ul class="list-unstyled">
-							<c:choose>
-							<c:when test="${activeUser!=null && fn:length(activeUser)>0}">
-							<c:forEach items="${activeUser}" var="u" varStatus="status">
-								<li><a
-									href="<%=basePath%>myBlogController?userId=${u.user.id}"
-									target="_blank"> ${status.index +1}.${u.user.userName } </a></li>								
-								</c:forEach>
-								</c:when>
-								<c:otherwise>
-								<li>暂无排名，sorry......</li>
-								
-								</c:otherwise>
-								</c:choose>
+								<ul>
+								<c:choose>
+								<c:when test="${activeUser!=null && fn:length(activeUser)>0}">
+								<c:forEach items="${activeUser}" var="u" varStatus="status">
+									<li><a
+										href="<%=basePath%>myBlogController?userId=${u.user.id}"
+										target="_blank">   ${status.index +1}.${u.user.userName } </a></li>
+									</c:forEach>
+									</c:when>
+									<c:otherwise>
+									<li>暂无排名，sorry......</li>
+
+									</c:otherwise>
+									</c:choose>
+								</ul>
 							</ul>
 						</div>
 					</div>
@@ -199,18 +197,20 @@
 					<div class="row">
 						<div class="">
 							<ul class="list-unstyled">
-							<c:choose>
-							<c:when test="${topTenArticle!=null }">
-							<c:forEach items="${topTenArticle }" var="art" varStatus="status">							
-								<li><a
-									href="<%=basePath%>ArtCom?artId=${art.id }&userId=${art.userId}"
-									target="_blank">${status.index +1}. ${art.title }</a></li>								
-								</c:forEach>
-								</c:when>
-								<c:otherwise>
-								<li>暂无排名，sorry......</li>							
-								</c:otherwise>
-								</c:choose>
+								<ul>
+									<c:choose>
+										<c:when test="${topTenArticle!=null }">
+											<c:forEach items="${topTenArticle }" var="art" varStatus="status">
+												<li><a
+														href="<%=basePath%>ArtCom?artId=${art.id }&userId=${art.userId}"
+														target="_blank">   ${status.index +1}. ${art.title }</a></li>
+											</c:forEach>
+										</c:when>
+										<c:otherwise>
+											<li>暂无排名，sorry......</li>
+										</c:otherwise>
+									</c:choose>
+								</ul>
 							</ul>
 						</div>
 					</div>

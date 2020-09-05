@@ -7,12 +7,14 @@ import java.sql.Timestamp;
  *
  */
 public class Ucomment {
+
 	private int aid;//文章主键
 	private int cid;//评论主键
 	private String ccontent;//评论内容
 	private String userName;//评论用户
 	private String title;//评论的文章标题
 	private Timestamp publishTime;//评论发布时间
+
 	public int getAid() {
 		return aid;
 	}
