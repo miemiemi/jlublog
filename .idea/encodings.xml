@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/WebContent" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/src" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/META-INF" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/MyJsp.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/META-INF" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/MyJsp.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/WEB-INF" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/bootstrap" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/frame" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/img" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/test.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/test2.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/admin" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/bootstrap" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/frame" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/img" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/sql" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/test.jsp" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/test2.jsp" charset="GBK" />
+  </component>
+</project>
