@@ -170,30 +170,6 @@
 					</form>
 				</div>
 
-
-				<form action="servlet/GetSysCategoryServlet" method="GET">
-					<div class="well">
-						<h4>网站分类</h4>
-						<div class="row">
-							<div class="col-lg-6">
-								<ul class="list-unstyled">
-									<c:choose>
-										<c:when test="${allSysCategory!=null && fn:length(allSysCategory)>0}">
-											<c:forEach items="${allSysCategory }" var="sc">
-												<li><a href="#">${sc.categoryName }</a></li>
-											</c:forEach>
-										</c:when>
-										<c:otherwise>
-										<li>无分类</li>
-										</c:otherwise>
-									</c:choose>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<!-- /well -->
-				</form>
-
 				<div class="well">
 					<h4>本周活跃博主</h4>
 					<div class="row">
