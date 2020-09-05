@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cn.niit.mapper.AddArticle;
-import cn.niit.mapper.ApplyMapper;
 import cn.niit.mapper.ArticleMapper;
 import cn.niit.mapper.CategoryManage;
 import cn.niit.mapper.Cmt;
@@ -54,8 +53,6 @@ public class SysCategoryServiceImpl implements SysCategoryService {
 	private AddArticle addArticle;
 	@Autowired
 	private Cmt cmt;
-	@Autowired 
-	private ApplyMapper applyMapper;
 	@Autowired
 	private CountMappeor countMappeor;
 	
@@ -81,9 +78,7 @@ public class SysCategoryServiceImpl implements SysCategoryService {
 	public List<Article> search(String value) {
 		return sysCategoryMapper.search(value);
 	}
-	
-	
-	
+
 
 	@Override
 	public PageInfo pageControl(String pageNum) {
@@ -259,15 +254,6 @@ public List<Category> selArtCategory(Integer id) {
 
 
 
-@Override
-public int applyBlog(String blogName, Integer userId, String description, String annoucement) {
-	return 	applyMapper.applyBlog(blogName, userId, description, annoucement);
-}
-
-@Override
-public int updIsApply(Integer userId) {
-	return applyMapper.updIsApply(userId);
-}
 
 @Override
 public int setCountNum(Integer num) {

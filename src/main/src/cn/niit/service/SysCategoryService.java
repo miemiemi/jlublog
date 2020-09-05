@@ -76,10 +76,7 @@ public interface SysCategoryService {
 	List<Category> selArtCategory(Integer id);
 
 	List<Article> search(String value);
-	
-	int applyBlog(String blogName,Integer userId,String description,String annoucement);
 
-	int updIsApply(Integer userId);
 
 	//统计网站访问次数
 	int setCountNum(Integer num);

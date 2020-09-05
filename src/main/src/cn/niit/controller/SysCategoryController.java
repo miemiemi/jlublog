@@ -148,10 +148,6 @@ public class SysCategoryController {
     	 return "forward:SysCategoryList";
      }
 
-	@RequestMapping("applyBlog")
-	public String applyBlog() {
-		return "ApplyBlog";
-	}
 
 //     ≤©Œƒπ‹¿Ì
      @RequestMapping(value="manage")
@@ -335,13 +331,7 @@ public class SysCategoryController {
     	return "SearchResult";
     }
    
-    @RequestMapping(value="applyMyBlog",method= {RequestMethod.POST,RequestMethod.GET} )
-    private String applyMyBlog(String blog_name,Integer userId,String description,String annoucement) {
-    	
-    	 SysCategoryServiceImpl.applyBlog(blog_name, userId, description, annoucement);
-    	 SysCategoryServiceImpl.updIsApply(userId);
-    	return "forward:myBlogController";
-    }
+
     
     
     @RequestMapping("springUpload")
