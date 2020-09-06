@@ -32,7 +32,7 @@ public class SysCategoryController {
     	 List<SysCategory> allSysCategory = SysCategoryServiceImpl.getAllSysCategory();
     	 model.addAttribute("allSysCategory", allSysCategory);
     	 
-    	 List<Article> activeUser = SysCategoryServiceImpl.getActiveUser(2);
+    	 List<Article> activeUser = SysCategoryServiceImpl.getActiveUser(5);
     	 model.addAttribute("activeUser", activeUser);
     	 
     	 List<Article> topTenArticle = SysCategoryServiceImpl.topTenArticle();
@@ -62,6 +62,7 @@ public class SysCategoryController {
     	 model.addAttribute("artCom", artCom);
     	 return "Post";
      }
+
 //   添加评论
     @RequestMapping(value="addCom",method= {RequestMethod.POST,RequestMethod.GET})
     private String addCom(Integer userId,Integer artId,String comment_content) {
@@ -80,7 +81,6 @@ public class SysCategoryController {
    	 List<Com> selCmt = SysCategoryServiceImpl.selCmt(userId);
    	 request.setAttribute("selCmt", selCmt);
    	 return "CommentManage";
-//   	 return "test";
     }
 //  评论管理
   @RequestMapping(value="artCmtMng")
@@ -90,9 +90,9 @@ public class SysCategoryController {
  	 user.setId(userId);
  	 List<Article> articles = SysCategoryServiceImpl.selArtCmtMng(user);
  	 model.addAttribute("articles",articles);
-// 	 return "test";
  	 return "CommentManage";
   }
+
 //  删除评论
   @RequestMapping("deleteComment")
   private String deleteComment(int cmtId,Integer userId) {
@@ -304,6 +304,7 @@ public class SysCategoryController {
     	
     	return "forward:myBlogController";
     }
+
 //    新建文章的下拉栏
     @RequestMapping("createArt")
     private String createArt(Integer userId,Integer artId) {

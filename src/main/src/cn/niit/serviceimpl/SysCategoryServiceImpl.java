@@ -265,15 +265,6 @@ public Counter getCountNum() {
 	return countMappeor.getCountNum();
 }
 
-
-
-
-
-
-
-
-
-
 	
 	
 }
